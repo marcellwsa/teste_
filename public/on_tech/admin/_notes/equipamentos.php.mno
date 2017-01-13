@@ -1,0 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<info>
+	<infoitem key="UD_rs_produtos" value="name:prd_id;datatype:int,name:prd_descricao;datatype:blob,name:prd_categoria;datatype:string,name:prd_modelo;datatype:string,name:prd_preco;datatype:real,name:prd_status;datatype:int,name:prd_data_cadastro;datatype:date,name:prd_usuario_cadastro;datatype:string,name:prd_data_modificacao;datatype:date,name:prd_usuario_modificacao;datatype:string,name:prd_nome;datatype:string,name:prd_fabricante;datatype:string,name:prd_foto;datatype:string" />
+</info>

@@ -1,0 +1,5 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<info>
+	<infoitem key="UD_rs_usuario" value="name:usu_id;datatype:int,name:usu_nome;datatype:string,name:usu_email;datatype:string,name:usu_senha;datatype:string,name:usu_telefone;datatype:int,name:usu_facebook;datatype:string,name:usu_instagram;datatype:string,name:usu_twitter;datatype:string,name:usu_id_tipo;datatype:int,name:usu_cep;datatype:string,name:usu_endereco;datatype:string,name:usu_bairro;datatype:string,name:usu_cidade;datatype:string,name:usu_complemento;datatype:string,name:usu_estado;datatype:string,name:usu_id_empresa;datatype:int,name:usu_status;datatype:int,name:usu_foto;datatype:string,name:usu_profissao;datatype:string,name:emp_nome;datatype:string" />
+	<infoitem key="UD_rs_empresa" value="name:emp_id;datatype:int,name:emp_razao;datatype:string,name:emp_nome;datatype:string,name:emp_cnpj;datatype:int" />
+</info>
