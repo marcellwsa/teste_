@@ -6,6 +6,8 @@ use App\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
 
 class RegisterController extends Controller
 {
@@ -67,5 +69,18 @@ class RegisterController extends Controller
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
         ]);
+    }
+    
+    public function showRegistrationForm(){
+        $users = DB::table('users')->get();  
+        if (count($users) < 1) { //se entra se tiver nenhum usuario
+            return view('auth.register');
+        } else {
+            if (Auth::check()) {
+                return view('home');
+            } else {
+                return view('auth.login');
+            }
+        }
     }
 }

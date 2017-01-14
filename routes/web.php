@@ -12,9 +12,17 @@
 */
 
 Route::get('/', function () {
-    return view('login');
+    if (Auth::check()) {
+        return view ('home');
+    } else {
+        return view('auth.login');
+    }
 });
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index');
+Route::group(['middleware' => ['auth']], function () {
+        Route::get('/home', 'HomeController@index');
+        
+    });
+Route::get('logout','Auth\LoginController@logout');

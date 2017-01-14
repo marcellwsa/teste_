@@ -43,7 +43,8 @@ class LoginController extends Controller
     public function login(Request $request)
     {
         try {
-            Auth::attempt(array('email' => $request->get('email'), 'password' => ($request->get('senha'))));
+            Auth::attempt(array('email' => $request->get('email'), 'password' => ($request->get('senha')))); 
+            //TODO Mostrar os erros na tela principal caso erre a senha ou email
             return Redirect::intended('/'); //acessa o 'home'
             
         } catch (Exception $e) { dd($e);//caso nao tenha sido logado com sucesso 
