@@ -1,9 +1,12 @@
 <?php
 
 namespace App\Http\Controllers\Auth;
-
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Redirect;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Illuminate\Foundation\Auth\ThrottlesLogins;
 
 class LoginController extends Controller
 {
@@ -35,5 +38,24 @@ class LoginController extends Controller
     public function __construct()
     {
         $this->middleware('guest', ['except' => 'logout']);
+    }
+    
+    public function login(Request $request)
+    {
+        try {
+            Auth::attempt(array('email' => $request->get('email'), 'password' => ($request->get('senha'))));
+            return Redirect::intended('/'); //acessa o 'home'
+            
+        } catch (Exception $e) { dd($e);//caso nao tenha sido logado com sucesso 
+            return back()->withErrors($e->getMessage())->withInput();
+        }
+    }
+    
+    public function logout() {
+
+        if(Auth::check()) {
+            Auth::logout(); 
+        }
+        return redirect("/");
     }
 }
