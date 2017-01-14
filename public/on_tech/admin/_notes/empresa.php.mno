@@ -1,4 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
-<info>
-	<infoitem key="UD_rs_empresa" value="name:emp_id;datatype:int,name:emp_razao;datatype:string,name:emp_nome;datatype:string,name:emp_cnpj;datatype:int,name:emp_telefone;datatype:string,name:emp_cep;datatype:int,name:emp_endereco;datatype:string,name:emp_complemento;datatype:string,name:emp_bairro;datatype:string,name:emp_cidade;datatype:string,name:emp_estado;datatype:string,name:emp_insc_estadual;datatype:string,name:emp_insc_municipal;datatype:string,name:emp_status;datatype:int,name:emp_id_tipo;datatype:int,name:emp_email;datatype:string,name:emp_site;datatype:string,name:emp_responsavel;datatype:string,name:emp_cel_responsavel;datatype:string,name:emp_email_responsavel;datatype:string,name:emp_data_criacao;datatype:date,name:emp_data_modificacao;datatype:date,name:emp_id_usu_criacao;datatype:int,name:emp_id_usu_modificacao;datatype:int,name:emp_id_categoria;datatype:int" />
-</info>

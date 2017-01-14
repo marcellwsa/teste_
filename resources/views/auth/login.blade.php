@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        @include('templates.top')
+        @include('templates.css')
         <title>ON TECH | Login</title>
     </head>
 <body class="gray-bg">
@@ -45,13 +45,21 @@
                 <button type="submit" class="btn btn-primary block full-width m-b">Login</button>
 
                 <a href="#"><small>Esqueceu a senha?</small></a> //TODO<br>
-                <?php $users = Illuminate\Support\Facades\DB::table('users')->get(); 
-                if (count($users) < 1) {
-                    echo "<a href=\""; ?> 
-                    {{ url('/register') }}
-                    <?php
-                    echo "\"><small>Primeiro acesso?</small></a>";
-                }
+                <?php if (\Illuminate\Support\Facades\Schema::hasTable('users')) {
+                        $users = Illuminate\Support\Facades\DB::table('users')->get();
+                        if (count($users) < 1) { //só moestra se nao tiver usuários
+                            echo "<a href=\""; ?> 
+                            {{ url('/register') }}
+                            <?php
+                            echo "\"><small>Primeiro acesso?</small></a>";
+                        }
+                    } else {
+                        echo "<a href=\""; ?> 
+                            {{ url('/register') }}
+                            <?php
+                            echo "\"><small>Primeiro acesso?</small></a>";
+                    } 
+                
                 ?>
 <!--                <p class="text-muted text-center"><small>Não tem uma conta ainda?</small></p>-->
 <!--                <a class="btn btn-sm btn-white btn-block" href="register.html">Criar uma conta</a>-->

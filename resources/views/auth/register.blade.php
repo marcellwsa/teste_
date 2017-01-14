@@ -59,6 +59,20 @@
                                 <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
                             </div>
                         </div>
+                        
+                        <div class="form-group{{ $errors->has('funcao') ? ' has-error' : '' }}">
+                            <label for="funcao" class="col-md-4 control-label">Função</label>
+
+                            <div class="col-md-6">
+                                <input id="funcao" type="text" class="form-control" name="funcao" value="{{ old('funcao') }}" >
+
+                                @if ($errors->has('funcao'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('funcao') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
 
                         <div class="form-group">
                             <div class="col-md-6 col-md-offset-4">
